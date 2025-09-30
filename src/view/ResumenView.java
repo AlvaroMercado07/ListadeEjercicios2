@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package view;
 
-/**
- *
- * @author alvar
- */
-public class ResumenView {
-    
+package view;
+import javax.swing.*;
+
+public class ResumenView extends JFrame {
+        public ResumenView(String resumen) {
+        setTitle("Resumen del Pedido");
+        setSize(320,220);
+        JTextArea txt = new JTextArea(resumen);
+        txt.setEditable(false);
+        add(new JScrollPane(txt));
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
 }
