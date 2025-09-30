@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
-/**
- *
- * @author alvar
- */
-public class PolloCombo {
-    
+
+public class PolloCombo extends combo {
+    public PolloCombo() {
+        this.nombre="Combo Pollo";
+    }
+    @Override
+    public String detalle(){
+        return nombre;
+    }
 }
