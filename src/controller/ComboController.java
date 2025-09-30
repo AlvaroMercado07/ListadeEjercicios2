@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package controller;
 
-/**
- *
- * @author alvar
- */
+package controller;
+import model.*;
+import view.ResumenView;
 public class ComboController {
-    
+  public void crearPedido(String tipoCombo, String bebida, String acompanamiento, String extra) {
+        combo comboBase = ComboFactory.crearCombo(tipoCombo);
+        if (comboBase == null) {
+            new ResumenView("Tipo de combo invalido: " + tipoCombo);
+            return;
+        }
+
+        ComboBuilder builder = new ComboBuilder(comboBase)
+                .setBebida(bebida)
+                .setAcompanamiento(acompanamiento)
+                .setExtra(extra);
+
+        Pedido pedido = builder.build();
+        new ResumenView(pedido.getResumen());
+    }   
 }
